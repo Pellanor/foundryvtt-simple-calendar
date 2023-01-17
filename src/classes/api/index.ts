@@ -1417,6 +1417,7 @@ export function getNotesForDay(year: number, month: number, day: number, calenda
  * //     id: "d4791796",
  * //     minutesInHour: 60,
  * //     secondsInCombatRound: 6,
+ * //     hoursInWatch: 6,
  * //     secondsInMinute: 60,
  * //     unifyGameAndClockPause: true,
  * //     updateFrequency: 1

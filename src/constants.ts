@@ -392,7 +392,8 @@ export enum DateTimeUnits{
     Hour = "hour",
     Minute = "minute",
     Round = "round",
-    Second = "seconds"
+    Second = "seconds",
+    Watch = "watch",
 }
 
 /**

@@ -58,6 +58,7 @@ export default class SCController {
             combatPauseRule: CombatPauseRules.Active,
             permissions: new UserPermissions(),
             secondsInCombatRound: 6,
+            hoursInWatch: 4,
             syncCalendars: false,
             showNotesFolder: false
         };
@@ -137,6 +138,7 @@ export default class SCController {
         const globalConfiguration = <SimpleCalendar.GlobalConfigurationData>GameSettings.GetObjectSettings(SettingNames.GlobalConfiguration);
         this.globalConfiguration.permissions.loadFromSettings(globalConfiguration.permissions);
         this.globalConfiguration.secondsInCombatRound = globalConfiguration.secondsInCombatRound;
+        this.globalConfiguration.hoursInWatch = globalConfiguration.hoursInWatch;
         this.globalConfiguration.calendarsSameTimestamp = globalConfiguration.calendarsSameTimestamp;
         this.globalConfiguration.syncCalendars = globalConfiguration.syncCalendars;
         this.globalConfiguration.showNotesFolder = globalConfiguration.showNotesFolder;
@@ -174,6 +176,7 @@ export default class SCController {
                 version: GameSettings.GetModuleVersion(),
                 permissions: globalConfig.permissions,
                 secondsInCombatRound: globalConfig.secondsInCombatRound,
+                hoursInWatch: globalConfig.hoursInWatch,
                 calendarsSameTimestamp: globalConfig.calendarsSameTimestamp,
                 syncCalendars: globalConfig.syncCalendars,
                 showNotesFolder: globalConfig.showNotesFolder,

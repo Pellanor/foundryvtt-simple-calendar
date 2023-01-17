@@ -2137,6 +2137,8 @@ declare global{
             permissions: UserPermissions;
             /** How many seconds are in a combat round. */
             secondsInCombatRound: number;
+            /** The number of hours in a single watch. */
+            hoursInWatch: number;
             /** If to sync all time changes across each calendar. */
             syncCalendars: boolean;
             /** If to show the notes folder in the journal entries tab. */

@@ -637,6 +637,11 @@ export default class MainApp extends FormApplication{
                 this.uiElementStates.dateTimeUnitText = "FSC.Second";
                 change = true;
             }
+            else if(dataUnit === 'watch'){
+                this.uiElementStates.dateTimeUnit = DateTimeUnits.Watch;
+                this.uiElementStates.dateTimeUnitText = "FSC.Watch";
+                change = true;
+            }
             if(change){
                 this.updateApp();
             }
@@ -747,6 +752,8 @@ export default class MainApp extends FormApplication{
                     interval.seconds = amount * SC.globalConfiguration.secondsInCombatRound;
                 } else if(dataType === 'seconds' || dataType === 'minute' || dataType === 'hour' || dataType === 'day' || dataType === 'month' || dataType === 'year'){
                     interval[dataType] = amount;
+                } else if (dataType === 'watch') {
+                    interval['hour'] = amount * SC.globalConfiguration.hoursInWatch;
                 }
                 //If user is not the GM nor the primary GM, send over the socket
                 if(!GameSettings.IsGm() || !SC.primary){

@@ -125,6 +125,7 @@ describe('SCController Tests', () => {
         jest.spyOn(GameSettings, 'GetObjectSettings').mockReturnValueOnce({
             permissions: {},
             secondsInCombatRound: 2,
+            hoursInWatch: 2,
             calendarsSameTimestamp: false,
             syncCalendars: true,
             showNotesFolder: true,
@@ -135,6 +136,7 @@ describe('SCController Tests', () => {
         SC.load();
         expect(SCController.LoadThemeCSS).toHaveBeenCalledTimes(1);
         expect(SC.globalConfiguration.secondsInCombatRound).toBe(2);
+        expect(SC.globalConfiguration.hoursInWatch).toBe(2);
         expect(SC.globalConfiguration.calendarsSameTimestamp).toBe(false);
         expect(SC.globalConfiguration.syncCalendars).toBe(true);
         expect(SC.globalConfiguration.showNotesFolder).toBe(true);
@@ -167,6 +169,7 @@ describe('SCController Tests', () => {
             id: '',
             permissions: new UserPermissions(),
             secondsInCombatRound: 1,
+            hoursInWatch: 1,
             calendarsSameTimestamp: false,
             syncCalendars: false,
             showNotesFolder: false,

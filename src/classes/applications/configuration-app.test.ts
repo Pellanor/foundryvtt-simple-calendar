@@ -832,7 +832,7 @@ describe('Configuration App Class Tests', () => {
         const fEvent = {
             target: {
                 result: {
-                    toString: () => {return '{"generalSettings": {"permissions": {}}, "currentDate":{"day":1,"month":1}, "leapYearSettings":{}, "monthSettings": [], "moonSettings":[{"firstNewMoon":{"month":1,"day":1}}], "noteCategories":[], "seasonSettings":[{"startingMonth":1,"startingDay":1}], "timeSettings":{"secondsInCombatRound":6}, "weekdaySettings":[], "yearSettings":{}, "notes":{"default":{}}}'}
+                    toString: () => {return '{"generalSettings": {"permissions": {}}, "currentDate":{"day":1,"month":1}, "leapYearSettings":{}, "monthSettings": [], "moonSettings":[{"firstNewMoon":{"month":1,"day":1}}], "noteCategories":[], "seasonSettings":[{"startingMonth":1,"startingDay":1}], "timeSettings":{"secondsInCombatRound":6, "hoursInWatch":4}, "weekdaySettings":[], "yearSettings":{}, "notes":{"default":{}}}'}
                 }
             }
         };
@@ -862,6 +862,7 @@ describe('Configuration App Class Tests', () => {
         const data = {
             globalConfig: {
                 secondsInCombatRound: 6,
+                hoursInWatch: 4,
                 calendarsSameTimestamp: false,
                 syncCalendars: false,
                 showNotesFolder: false

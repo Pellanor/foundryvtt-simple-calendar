@@ -66,6 +66,7 @@ export default class ConfigurationApp extends FormApplication {
         combatPauseRule: CombatPauseRules.Active,
         permissions: new UserPermissions(),
         secondsInCombatRound: 6,
+        hoursInWatch: 4,
         syncCalendars: false,
         showNotesFolder: false
     };
@@ -130,6 +131,7 @@ export default class ConfigurationApp extends FormApplication {
         SC.load();
         this.globalConfiguration.permissions = SC.globalConfiguration.permissions.clone();
         this.globalConfiguration.secondsInCombatRound = SC.globalConfiguration.secondsInCombatRound;
+        this.globalConfiguration.hoursInWatch = SC.globalConfiguration.hoursInWatch;
         this.globalConfiguration.calendarsSameTimestamp = SC.globalConfiguration.calendarsSameTimestamp;
         this.globalConfiguration.syncCalendars = SC.globalConfiguration.syncCalendars;
         this.globalConfiguration.showNotesFolder = SC.globalConfiguration.showNotesFolder;
@@ -653,6 +655,7 @@ export default class ConfigurationApp extends FormApplication {
             // Global Config: Settings
             //----------------------------------
             this.globalConfiguration.secondsInCombatRound = <number>getNumericInputValue('#scSecondsInCombatRound', 6, false, this.appWindow);
+            this.globalConfiguration.hoursInWatch = <number>getNumericInputValue('#scHoursInWatch', 4, false, this.appWindow);
             this.globalConfiguration.combatPauseRule = <CombatPauseRules>getTextInputValue('#scCombatPauseClockRule', <string>CombatPauseRules.Active, this.appWindow);
             this.globalConfiguration.calendarsSameTimestamp = getCheckBoxInputValue('#scCalendarsSameTimestamp', false, this.appWindow);
             this.globalConfiguration.syncCalendars = getCheckBoxInputValue('#scSyncCalendars', false, this.appWindow);
